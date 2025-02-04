@@ -55,8 +55,15 @@ if [[ $? -eq 1 ]]
 	echo "Difference: $diff"
 	multi=$(multiplication $num1 $num2)
 	echo "Multiplication: $multi"
+	
+	if [[ ($num2 == 0) ]]
+		then
+		echo "Error: Divide by 0"
+		exit 1
+	else
 	div=$(division $num1 $num2)
 	echo "Division: $div"
+	fi
 else
 	echo "Not a valid input (Both the entered values should be numbers only!!"
 	exit 1
